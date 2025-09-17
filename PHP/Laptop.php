@@ -39,19 +39,26 @@ class Laptop {
      * Display the laptop as an HTML card.
      * Includes an image, details, and action buttons (Edit/Delete).
      */
-    public function displayCard() {
-        echo "
-        <div class='card'>
-            <img src='uploads/{$this->image}' alt='{$this->name}' />
-            <h3>{$this->name}</h3>
-            <p><b>Brand:</b> {$this->brand}</p>
-            <p><b>Color:</b> {$this->color}</p>
-            <p><b>Price:</b> Rp {$this->price}</p>
-            <p><b>Warranty:</b> {$this->warranty} year(s)</p>
-            <a href='edit.php?id={$this->id}' class='btn'>Edit</a>
-            <a href='delete.php?id={$this->id}' class='btn red'>Delete</a>
-        </div>
-        ";
-    }
+    public function displayCard($index) {
+    echo "
+    <div class='card'>
+        <img src='uploads/{$this->image}' alt='{$this->name}' />
+        <h3>{$this->name}</h3>
+        <p><b>Brand:</b> {$this->brand}</p>
+        <p><b>Color:</b> {$this->color}</p>
+        <p><b>Price:</b> Rp {$this->price}</p>
+        <p><b>Warranty:</b> {$this->warranty} year(s)</p>
+        <form method='post' style='display:inline-block;'>
+            <input type='hidden' name='edit_index' value='{$index}'>
+            <button type='submit' class='btn'>Edit</button>
+        </form>
+        <form method='post' style='display:inline-block;'>
+            <input type='hidden' name='delete_index' value='{$index}'>
+            <button type='submit' class='btn red'>Delete</button>
+        </form>
+    </div>
+    ";
+}
+
 }
 ?>

@@ -38,21 +38,41 @@ Untuk bahasa C++, Java dan Python, dalam program ada 6 menu yang bisa dipilih ol
 6. Jika user memilih opsi 6, maka kode akan selesai dan menampilkan pesan "Exiting program.".
 
 # Dokumentasi
-## CPP
-![C++ Input](Dokumentasi/Cpp%20Menu.png)
-![C++ Input](Dokumentasi/Cpp%20Input.png)
-![C++ Input](Dokumentasi/Cpp%20Update.png)
-![C++ Input](Dokumentasi/Cpp%20Delete.png)
-![C++ Input](Dokumentasi/Cpp%20Search.png)
-![C++ Input](Dokumentasi/Cpp%20Display%20All.png)
-![C++ Input](Dokumentasi/Cpp%20Exit.png)
-![C++ Input](Dokumentasi/Cpp%20Error%201.png)
-![C++ Input](Dokumentasi/Cpp%20Error%202.png)
-![C++ Input](Dokumentasi/Cpp%20Error%203.png)
-![C++ Input](Dokumentasi/Cpp%20Error%204.png)
 
-## Java
+## Output
+### Menu
+![Menu](Dokumentasi/Cpp%20Menu.png)
+### Input
+![Input](Dokumentasi/Cpp%20Input.png)
+### Update
+![Update](Dokumentasi/Cpp%20Update.png)
+### Delete
+![Delete](Dokumentasi/Cpp%20Delete.png)
+### Search
+![Search](Dokumentasi/Cpp%20Search.png)
+### Display
+![Display All](Dokumentasi/Cpp%20Display%20All.png)
+### Exit
+![Exit](Dokumentasi/Cpp%20Exit.png)
 
-## Python
+### Error Handling
+Jika ID tidak valid
+![Error 1](Dokumentasi/Cpp%20Error%201.png)
+Jika menginput selain angka di bagian harga
+![Error 2](Dokumentasi/Cpp%20Error%202.png)
+Jika menginput selain angka di bagian garansi
+![Error 3](Dokumentasi/Cpp%20Error%203.png)
+Jika ID tidak ditemukan saat mengubah, menghapus, atau mencari
+![Error 4](Dokumentasi/Cpp%20Error%204.png)
 
 ## PHP
+Tampilan Utama
+![PHP Menu](Dokumentasi/PHP%20Menu.png)
+Tampilan Input
+![PHP Input](Dokumentasi/PHP%20Input.png)
+Tampilan Cari
+![PHP Search](Dokumentasi/PHP%20Search.png)
+Tampilan Edit
+![PHP Edit](Dokumentasi/PHP%20edit.png)
+Tombol Hapus
+![PHP Delete](Dokumentasi/PHP%20Delete.png)
