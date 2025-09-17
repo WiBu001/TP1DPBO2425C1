@@ -1,13 +1,17 @@
+/* 
+Saya Daffa Dhiyaa Candra dengan NIM 2404286 mengerjakan 
+TP 1 dalam mata kuliah Desain dan Pemrograman
+Berorientasi Objek untuk keberkahanNya maka saya tidak 
+melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin. 
+*/
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
     private static void clearScreen() {
-        // di Java tidak ada system("cls"), jadi cukup kasih banyak newline
-        for (int i = 0; i < 30; i++) {
-            System.out.println();
-        }
+        System.out.print("\033[H\033[2J");
     }
 
     private static void menu() {
