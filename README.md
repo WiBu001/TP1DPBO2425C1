@@ -70,13 +70,13 @@ Jika ID tidak ditemukan saat mengubah, menghapus, atau mencari
 
 
 ## PHP
-Tampilan Utama
+Tampilan Utama  
 ![PHP Menu](Dokumentasi/PHP%20Menu.png)
-Tampilan Input
+Tampilan Input  
 ![PHP Input](Dokumentasi/PHP%20Input.png)
-Tampilan Cari
+Tampilan Cari  
 ![PHP Search](Dokumentasi/PHP%20Search.png)
-Tampilan Edit
+Tampilan Edit  
 ![PHP Edit](Dokumentasi/PHP%20edit.png)
-Tombol Hapus
+Tombol Hapus  
 ![PHP Delete](Dokumentasi/PHP%20Delete.png)
