@@ -56,14 +56,18 @@ Untuk bahasa C++, Java dan Python, dalam program ada 6 menu yang bisa dipilih ol
 ![Exit](Dokumentasi/Cpp%20Exit.png)
 
 ### Error Handling
-Jika ID tidak valid
-![Error 1](Dokumentasi/Cpp%20Error%201.png)
-Jika menginput selain angka di bagian harga
-![Error 2](Dokumentasi/Cpp%20Error%202.png)
-Jika menginput selain angka di bagian garansi
-![Error 3](Dokumentasi/Cpp%20Error%203.png)
-Jika ID tidak ditemukan saat mengubah, menghapus, atau mencari
-![Error 4](Dokumentasi/Cpp%20Error%204.png)
+Jika ID tidak valid  
+![Error 1](Dokumentasi/Cpp%20Error%201.png)  
+
+Jika menginput selain angka di bagian harga  
+![Error 2](Dokumentasi/Cpp%20Error%202.png)  
+
+Jika menginput selain angka di bagian garansi  
+![Error 3](Dokumentasi/Cpp%20Error%203.png)  
+
+Jika ID tidak ditemukan saat mengubah, menghapus, atau mencari  
+![Error 4](Dokumentasi/Cpp%20Error%204.png)  
+
 
 ## PHP
 Tampilan Utama
