@@ -98,19 +98,17 @@ int main(){
                 }
             }
 
+            cin.ignore(); //Clear the newline character from the input buffer
             //Input name
             cout << "Laptop Name: ";
-            cin.ignore(); //Clear the newline character from the input buffer
             getline(cin, tempName);
             
             //Input brand
             cout << "Laptop Brand: ";
-            cin.ignore(); //Clear the newline character from the input buffer
             getline(cin, tempBrand);
             
             //Input color
             cout << "Laptop Color: ";
-            cin.ignore(); //Clear the newline character from the input buffer
             getline(cin, tempColor);
 
             //check valid Price
@@ -129,8 +127,6 @@ int main(){
                 }
             }
 
-            cin.ignore(); //Clear the newline character from the input buffer
-
             //Check valid Warranty
             while(!validWarranty){
                 //Input Warranty
@@ -146,8 +142,6 @@ int main(){
                     validWarranty = true;
                 }
             }
-
-            cin.ignore(); //Clear the newline character from the input buffer
 
             //Construct new object
             Laptop newLaptop(tempID, tempName, tempBrand, tempColor, tempPrice, tempWarranty);
