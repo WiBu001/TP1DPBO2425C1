@@ -1,16 +1,22 @@
-# laptop.py
-# Class Laptop
+"""
+Saya Daffa Dhiyaa Candra dengan NIM 2404286 mengerjakan 
+TP 1 dalam mata kuliah Desain dan Pemrograman
+Berorientasi Objek untuk keberkahanNya maka saya tidak 
+melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin. 
+"""
 
 class Laptop:
+    # Constructor with default values
     def __init__(self, id=0, name="", brand="", color="", price=0, warranty=0):
+        # Private attributes (name-mangled with double underscore)
         self.__id = id
         self.__name = name
         self.__brand = brand
         self.__color = color
-        self.__price = price
-        self.__warranty = warranty
+        self.__price = price #in Rupiah
+        self.__warranty = warranty #in year
 
-    # Getter
+    # ===== Getter Methods =====
     def get_id(self):
         return self.__id
 
@@ -29,7 +35,7 @@ class Laptop:
     def get_warranty(self):
         return self.__warranty
 
-    # Setter
+    # ===== Setter Methods =====
     def set_name(self, name):
         self.__name = name
 
@@ -45,13 +51,14 @@ class Laptop:
     def set_warranty(self, warranty):
         self.__warranty = warranty
 
-    # Display method
+    # ===== Method to display laptop info =====
     def display(self):
         print(f"ID: {self.__id}")
         print(f"Name: {self.__name}")
         print(f"Brand: {self.__brand}")
         print(f"Color: {self.__color}")
         print(f"Price: Rp {self.__price}")
+        # Conditional text for warranty (singular/plural)
         if self.__warranty > 1:
             print(f"Warranty: {self.__warranty} years\n")
         else:

@@ -7,16 +7,19 @@ melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin. */
 #include <string>
 using namespace std;
 
+//create Laptop class
 class Laptop {
+    //create private attribute
     private:
-        int id;
-        string name;
-        string brand;
-        string color;
+        int id; //declare id
+        string name; //declare name
+        string brand; //declare brand
+        string color; //declare color
         int price; //in Rupiah
         int warranty; // in year
 
     public:
+
         //Default Constructor
         Laptop(){
             this->id = 0;
@@ -37,45 +40,50 @@ class Laptop {
             this->warranty = warranty;
         }
 
-        //Setter
+        //Getter for id
+         int getID() {
+            return this->id;
+        }
+
+        //Setter and Getter for name
         void setName(string name) {
             this->name = name;
-        }
-
-        void setBrand(string brand) {
-            this->brand = brand;
-        }
-
-        void setColor(string color) {
-            this->color = color;
-        }
-
-        void setPrice(int price) {
-            this->price = price;
-        }
-
-        void setWarranty(int warranty) {
-            this->warranty = warranty;
-        }
-
-        int getID() {
-            return this->id;
         }
 
         string getName() {
             return this->name;
         }
 
+        //Setter and Getter for Brand
+        void setBrand(string brand) {
+            this->brand = brand;
+        }
+
         string getBrand() {
             return this->brand;
+        }
+
+        //Setter and Getter for Color
+        void setColor(string color) {
+            this->color = color;
         }
 
         string getColor() {
             return this->color;
         }
 
+        //Setter and Getter for Price
+        void setPrice(int price) {
+            this->price = price;
+        }
+
         int getPrice() {
             return this->price;
+        }
+
+        //Setter and Getter for Warranty
+        void setWarranty(int warranty) {
+            this->warranty = warranty;
         }
 
         int getWarranty() {
