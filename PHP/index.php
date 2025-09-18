@@ -17,9 +17,9 @@ session_start(); // Start a new session or resume an existing one
 // Initialize session data with some default laptops (only if session is empty)
 if (!isset($_SESSION['laptops'])) {
     $_SESSION['laptops'] = [
-        new Laptop(1, "XPS 13", "Dell", "Silver", 15000000, 2, "XPS 13.jpg"),
-        new Laptop(2, "MacBook Air", "Apple", "Space Gray", 18000000, 1, "macbook air.jpeg"),
-        new Laptop(3, "ThinkPad X1", "Lenovo", "Black", 20000000, 3, "thinkpad X1.png")
+        new Laptop(1, "XPS 13", "Dell", "Silver", 15000000, 2, "XPS%2013.jpg"),
+        new Laptop(2, "MacBook Air", "Apple", "Space Gray", 18000000, 1, "macbook%20air.jpeg"),
+        new Laptop(3, "ThinkPad X1", "Lenovo", "Black", 20000000, 3, "thinkpad%20X1.png")
     ];
 }
 
@@ -71,18 +71,18 @@ if (isset($_POST['edit_index'])) {
 if (isset($_POST['update'])) {
     $index = $_POST['update_index'];
     if (isset($_SESSION['laptops'][$index])) {
-        // Update fields with new values
-        $_SESSION['laptops'][$index]->name = $_POST['name'];
-        $_SESSION['laptops'][$index]->brand = $_POST['brand'];
-        $_SESSION['laptops'][$index]->color = $_POST['color'];
-        $_SESSION['laptops'][$index]->price = $_POST['price'];
-        $_SESSION['laptops'][$index]->warranty = $_POST['warranty'];
+        // Update fields with new values via setters
+        $_SESSION['laptops'][$index]->setName($_POST['name']);
+        $_SESSION['laptops'][$index]->setBrand($_POST['brand']);
+        $_SESSION['laptops'][$index]->setColor($_POST['color']);
+        $_SESSION['laptops'][$index]->setPrice($_POST['price']);
+        $_SESSION['laptops'][$index]->setWarranty($_POST['warranty']);
 
         // Handle updated image if provided
         if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
             $imageName = uniqid() . "_" . basename($_FILES["image"]["name"]);
             move_uploaded_file($_FILES["image"]["tmp_name"], "uploads/" . $imageName);
-            $_SESSION['laptops'][$index]->image = $imageName;
+            $_SESSION['laptops'][$index]->setImage($imageName);
         }
     }
     header("Location: index.php");
@@ -98,10 +98,11 @@ if (isset($_GET['search'])) {
     $searchQuery = strtolower(trim($_GET['search'])); // Normalize search input
     // Filter laptops based on name or brand
     $laptops = array_filter($_SESSION['laptops'], function($laptop) use ($searchQuery) {
-        return strpos(strtolower($laptop->name), $searchQuery) !== false ||
-               strpos(strtolower($laptop->brand), $searchQuery) !== false;
+        return strpos(strtolower($laptop->getName()), $searchQuery) !== false ||
+               strpos(strtolower($laptop->getBrand()), $searchQuery) !== false;
     });
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -219,15 +220,15 @@ if (isset($_GET['search'])) {
         <h2><?php echo $editMode ? "Edit Laptop" : "Add New Laptop"; ?></h2>
         <form method="post" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Name" 
-                value="<?php echo $editMode ? $laptops[$editIndex]->name : ''; ?>" required><br>
+                value="<?php echo $editMode ? $laptops[$editIndex]->getName() : ''; ?>" required><br>
             <input type="text" name="brand" placeholder="Brand" 
-                value="<?php echo $editMode ? $laptops[$editIndex]->brand : ''; ?>" required><br>
+                value="<?php echo $editMode ? $laptops[$editIndex]->getBrand() : ''; ?>" required><br>
             <input type="text" name="color" placeholder="Color" 
-                value="<?php echo $editMode ? $laptops[$editIndex]->color : ''; ?>" required><br>
+                value="<?php echo $editMode ? $laptops[$editIndex]->getColor() : ''; ?>" required><br>
             <input type="number" name="price" placeholder="Price" 
-                value="<?php echo $editMode ? $laptops[$editIndex]->price : ''; ?>" required><br>
+                value="<?php echo $editMode ? $laptops[$editIndex]->getPrice() : ''; ?>" required><br>
             <input type="number" name="warranty" placeholder="Warranty (years)" 
-                value="<?php echo $editMode ? $laptops[$editIndex]->warranty : ''; ?>" required><br>
+                value="<?php echo $editMode ? $laptops[$editIndex]->getWarranty() : ''; ?>" required><br>
             <input type="file" name="image" accept="image/*"><br>
 
             <?php if ($editMode): ?>
